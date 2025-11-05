@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blix</title>
+</head>
+<style>
+   
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+.fixed-box {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #000000;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000; 
+    font-size: 3vh ;
+    
+}
+
+.scroll-box {
+  background-color: #0f1c2a; 
+  overflow: hidden;           
+  padding: 12px 0;
+  color: white;
+  white-space: nowrap;    
+}
+
+.scroll-track {
+  display: flex;
+  animation: scroll 10s linear infinite;
+}
+
+.content {
+  display: flex;    
+  flex-shrink: 0;  
+}
+
+.content span {
+  margin: 0 20px;    
+  font-size: 1.5vw;    
+  font-weight: lighter;
+}
+
+.content .green {
+  color: #4CAF50; /
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.top-bar {
+  height: 8px;
+  background-color: #0b2f4c; 
+}
+
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #eeeeee;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.logo img {
+  height: 10vh; 
+  width: 9vw;
+}
+
+.nav-links ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none; 
+}
+
+.nav-links li {
+  margin: 0 15px; 
+  position: relative;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 5px 0;
+  display: block;
+   font-weight: 300;
+}
+
+.nav-links a span {
+  font-size: 0.7em; 
+  margin-left: 4px;
+}
+
+.nav-links a.active {
+  border-bottom: 3px solid #333;
+  color: #000;
+}
+
+.nav-icons {
+  display: flex;
+  align-items: center;
+}
+
+.nav-icons .icon {
+  margin-left: 20px; 
+}
+
+.nav-icons .icon img {
+  height: 24px; 
+  width: 24px;
+}
+/* .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 10px 0;
+  margin: 0;
+  list-style: none;
+  min-width: 180px;
+  z-index: 10;
+}
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu li {
+  margin: 0;
+}
+
+.dropdown-menu a {
+  padding: 10px 20px;
+  font-weight: 400;
+}
+
+.dropdown-menu a.active {
+  border-bottom: none;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f4f4f4;
+} */
+
+ .main{
+    height: 72vh;
+    width: 100%;
+ }
+
+.product-section {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto; 
+}
+
+.product-tabs {
+    display: flex;
+    justify-content: center; 
+    margin-bottom: 30px;
+}
+
+.tab-link {
+    text-decoration: none;
+    color: #555;
+    font-size: 3vh;
+    font-weight: 600;
+    padding: 20px;
+    margin: 0 10px;
+    border-bottom: 3px solid transparent; 
+}
+
+.tab-link.active {
+    color: #000000; 
+    border-bottom: 3px solid #007bff;
+    background-color: #acd1f8;
+    height: 4vh;
+}
+
+.product-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.product-card {
+  text-decoration: none;
+    flex-basis: 32%;
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef; 
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+   
+}
+
+.card-image img {
+    width: 100%;
+    height: auto;
+    display: block; 
+}
+
+.card-title {
+    padding: 20px 15px;
+}
+
+.card-title h4 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+.category{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+}
+.category h4{
+  justify-self: center;
+}
+.category-card{
+  margin-top: 4vw;
+    height: 40vh;
+    /* width: 30vw; */
+}
+.category-image img{
+    height: 25vh;
+    opacity: 0.5;
+}
+.card-image-big{
+    margin: 0;
+}
+.category-image-big img{
+      height: 35vh;
+}
+.do{
+    font-size: 2vw;
+    justify-self: center;
+    margin-bottom: 3vw;
+    margin-top: 3vw;
+}
+
+.hero-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+            min-height: 80vh;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            gap: 40px;
+        }
+
+        .hero-text {
+            flex: 1;
+            max-width: 500px;
+            justify-items: center;
+            justify-content: center;
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .sub-heading {
+            text-align: left;
+            font-size: 1.5vw;
+            color: #555;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .main-heading {
+            font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+            font-size: 4.5rem;
+            font-weight: 200;
+            color: #222;
+            margin-bottom: 20px;
+            line-height: 1.1;
+            margin-top: 0;
+        }
+
+        .description {
+            font-size: 1.1rem;
+            color: #444;
+            margin-bottom: 30px;
+            max-width: 450px;
+        }
+
+        .cta-button {
+            margin-left: 12vw;
+            justify-content: center;
+            display: inline-block;
+            background-color: #000000;
+            color: #ffffff;
+            padding: 14px 28px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border: none;
+            border-radius: 2px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #333;
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 40px 20px;
+            }
+            .hero-content {
+                flex-direction: column;
+            }
+            .hero-text {
+                order: 2;
+                text-align: center;
+            }
+            .hero-image {
+                order: 1;
+                margin-bottom: 30px;
+            }
+            .description {
+                margin-left: auto;
+                margin-right: auto;
+                max-width: 100%;
+            }
+            .main-heading {
+                font-size: 3rem;
+            }
+        }
+        .items-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  justify-items: center;
+  align-items: start;
+}
+
+.item-card {
+  text-align: center;
+  background: #fff;
+  padding: 10px;
+  transition: transform 0.3s ease;
+}
+
+.item-card img {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 4px;
+  background-color: #f5f5f5;
+}
+
+.item-card h3 {
+  font-size: 15px;
+  font-weight: 600;
+  margin-top: 10px;
+  color: #000;
+}
+
+.item-card p {
+  font-size: 14px;
+  color: #444;
+  margin-top: 5px;
+}
+
+.item-card:hover {
+  transform: translateY(-5px);
+}
+
+.best{
+    font-size: 4vw;
+    justify-self: center;
+    margin-bottom: 3vh;
+}
+.video{
+    height: 60vh;
+    width: 100%;
+}.part{
+    justify-self: center;
+    margin-top: 3vw;
+    font-size: 2vw;
+}
+.glide {
+  /* margin-top: 5vw; */
+  margin-bottom: 3vw;
+  width: 100%;
+  overflow: hidden;
+  background: #fff; /* Optional */
+  padding: 20px 0;
+}
+
+.glide-track {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  animation: scroll-left 30s linear infinite;
+}
+
+.glide-img {
+  height: 3vw;
+  width: auto;
+  flex-shrink: 0;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+.glide-img:hover {
+  filter: grayscale(0%);
+}
+
+@keyframes scroll-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.edtech{
+  justify-self: center;
+  font-size: 2vw;
+}
+.wro-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 100px;
+  gap: 60px;
+}
+
+.wro-left img {
+  max-width: 40vw;
+  height: auto;
+}
+
+.wro-right {
+  max-width: 600px;
+}
+
+.wro-right p {
+  font-size: 12px;
+  line-height: 1.7;
+  color: #222;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.wro-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  width: 9vw;    
+  height: 3vw;    
+  border: 2px solid #f6e300;
+  font-size: 12px;
+  transition: 0.3s;
+  margin-left: 15vw;
+}
+
+.wro-btn:hover {
+  border: 4px solid #f6e300; 
+  /* background-color: #f6e300; */
+  /* color: #000; */
+}
+@media (max-width: 900px) {
+  .wro-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 20px;
+  }
+  .wro-left img {
+    max-width: 300px;
+  }
+}
+
+footer {
+  padding: 60px 100px 20px;
+  background-color: #fff;
+  border-top: 1px solid #eee;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-logo {
+  flex: 1;
+  min-width: 220px;
+}
+
+.footer-logo img {
+  width: 100px;
+  margin-bottom: 15px;
+}
+
+.footer-logo p {
+  color: #111;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.footer-col {
+  flex: 1;
+  min-width: 180px;
+}
+
+.footer-col h4 {
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+  text-decoration: none;
+  color: #000;
+  font-size: 15px;
+  transition: color 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+  color: #b6a700;
+}
+
+/* Social icons */
+.footer-social {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.footer-social a {
+  margin: 0 8px;
+  color: #000;
+  font-size: 20px;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-social a:hover {
+  color: #f6e300;
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 13px;
+  color: #333;
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  footer {
+    padding: 40px 20px;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+}
+@media (max-width: 900px) {
+    .main-nav {
+        flex-direction: column;
+        padding: 15px 20px;
+        gap: 15px;
+    }
+
+    .nav-links ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .logo img {
+        height: 60px;
+        width: auto;
+    }
+
+    .fixed-box {
+        font-size: 16px;
+        padding: 10px 15px;
+    }
+
+    .scroll-box .content span {
+        font-size: 14px;
+    }
+
+    .main {
+        height: auto;
+        width: 100%;
+    }
+
+    .tab-link {
+        font-size: 17px;
+        padding: 15px 8px;
+    }
+
+    .do, .part, .edtech, .best {
+        font-size: 2rem;
+    }
+
+    .hero-section {
+        padding: 40px 20px;
+        min-height: auto;
+    }
+
+    .sub-heading {
+        font-size: 1rem;
+    }
+
+    .main-heading {
+        font-size: 2.5rem;
+    }
+
+    .cta-button {
+        margin-left: 0;
+    }
+
+    .product-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .product-card {
+        flex-basis: 100%;
+        width: 90%;
+    }
+
+    .category {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .glide-img {
+        height: 30px;
+    }
+
+    .wro-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+    }
+    
+    .wro-left img {
+        max-width: 300px;
+    }
+
+    .wro-btn {
+        width: 180px;
+        height: 50px;
+        margin-left: 0;
+        font-size: 14px;
+    }
+
+    footer {
+        padding: 40px 20px;
+    }
+
+    .footer-top {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+}
+</style>
+<body>
+    <div class="fixed-box">
+      💬 chat
+    </div>
+    <div class="scroll-box">
+      <div class="scroll-track">
+        
+        <div class="content">
+          <span>Apply Discount Code: Welcome10</span>
+          <span class="green">Get 10% Off!</span>
+          <span>Apply Discount Code: Welcome10</span>
+          <span class="green">Get 10% Off!</span>
+          <span>Apply Discount Code: Welcome10</span>
+          <span class="green">Get 10% Off!</span>
+        </div>
+        
+        <div class="content">
+          <span>Apply Discount Code: Welcome10</span>
+          <span class="green">Get 10% Off!</span>
+          <span>Apply Discount Code: Welcome10</span>
+          <span class="green">Get 10% Off!</span>
+          <span>Apply Discount Code: Welcome10</span>
+          <span class="green">Get 10% Off!</span>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="top-bar"></div>
+
+    <header class="main-nav">
+        
+        <div class="logo">
+            <img src="https://blix.in/cdn/shop/files/Final_Blix_logo-02.png?v=1736241875&width=165" alt="Blix Logo">
+        </div>
+
+        <nav class="nav-links">
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">About us</a></li>
+                <li class="dropdown">
+                    <a href="#">Shop <span>&#9662;</span></a> 
+                    <!-- <ul class="dropdown-menu">
+                        <li><a href="#">Product 1</a></li>
+                        <li><a href="#">Product 2</a></li>
+                    </ul> -->
+                </li>
+                <li><a href="#">Blix For School</a></li>
+                <li><a href="#">Blix A Thon</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Replacement</a></li>
+                <li class="dropdown">
+                    <a href="#">Inquiry <span>&#9662;</span></a>
+                    <!-- <ul class="dropdown-menu">
+                        <li><a href="#">Inquiry 1</a></li>
+                        <li><a href="#">Inquiry 2</a></li>
+                    </ul> -->
+                </li>
+            </ul>
+        </nav>
+
+        <div class="nav-icons">
+            <a href="#" class="icon">
+                <img src="https://www.freepnglogos.com/uploads/search-png/search-icon-transparent-images-vector-15.png" alt="Search">
+            </a>
+            <a href="#" class="icon">
+                <img src="https://static.vecteezy.com/ti/vetor-gratis/p1/5005788-user-icon-in-trendy-flat-style-isolated-on-gray-background-user-symbol-for-your-web-site-design-logo-app-ui-vector-illustration-eps10-gratis-vetor.jpg" alt="User">
+            </a>
+            <a href="#" class="icon">
+                <img src="https://static.vecteezy.com/system/resources/previews/019/898/075/large_2x/shopping-bag-outline-icon-png.png" alt="Cart">
+            </a>
+        </div>
+
+    </header>
+    <img src="https://blix.in/cdn/shop/files/Not_Just_Smart_STEM_Smart_DVHP.jpg?v=1749794270&width=2000" alt="" class="main">
+
+    <section class="product-section">
+        
+        <nav class="product-tabs">
+            <a href="#" class="tab-link active">Blix Individual</a>
+            <a href="#" class="tab-link">Blix For School</a>
+        </nav>
+
+        <div class="product-grid">
+            
+            <div class="product-card">
+                <div class="card-image">
+                    <img src="https://cdn.shopify.com/s/files/1/0847/6232/9362/files/Rack_and_Pinion_Render.webp?v=1760427683" alt="STEM Toys">
+                </div>
+                <div class="card-title">
+                    <h4>STEM Toys</h4>
+                </div>
+            </div>
+
+            <a class="product-card" href="./spare.html">
+                <div class="card-image">
+                    <img src="https://cdn.shopify.com/s/files/1/0847/6232/9362/files/Spare_Parts_Render.webp?v=1760427683" alt="Spare Parts">
+                </div>
+                <div class="card-title">
+                    <h4>Spare Parts</h4>
+                </div>
+              </a>
+
+            <div class="product-card">
+                <div class="card-image">
+                    <img src="https://cdn.shopify.com/s/files/1/0847/6232/9362/files/Robotix_Kit_Render.webp?v=1760427683" alt="Robotix Kits">
+                </div>
+                <div class="card-title">
+                    <h4>Robotix Kits</h4>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+ <!-- .......................................................................................... -->
+
+    <div class="do">What we Do?</div>
+
+    <div class="category">
+
+         <div class="category-card">
+                <div class="category-image">
+                    <img src="https://cdn.shopify.com/s/files/1/0847/6232/9362/files/Electronics-1.webp?v=1760427683" alt="STEM Toys">
+                </div>
+                <div class="category-title">
+                    <h4>Electronics</h4>
+                </div>
+            </div>
+
+            <div class="category-card-big">
+                <div class="category-image-big">
+                    <img src="https://cdn.shopify.com/s/files/1/0847/6232/9362/files/Robotix-1.webp?v=1760427683" alt="STEM Toys">
+                </div>
+                <div class="category-title-big">
+                    <h4>Robotics</h4>
+                </div>
+            </div>
+
+         <div class="category-card">
+                <div class="category-image">
+                    <img src="https://cdn.shopify.com/s/files/1/0847/6232/9362/files/Coding-1.webp?v=1760427683" alt="STEM Toys">
+                </div>
+                <div class="category-title">
+                    <h4>Coding</h4>
+                </div>
+            </div>
+
+         
+    </div>
+    <section class="hero-section">
+        <div class="hero-content">
+            <div class="hero-text">
+                <p class="sub-heading">Meet The</p>
+                <h1 class="main-heading">Queaky Family</h1>
+                <p class="description">
+                    Discover the perfect blend of creativity and learning, all in
+                    one fun and engaging package.
+                </p>
+                <a href="#" class="cta-button">Explore More</a>
+            </div>
+            <div class="hero-image">
+                <img src="https://blix.in/cdn/shop/files/queaky_banner.webp?v=1704384749&width=750" alt="The Queaky Family colorful characters">
+            </div>
+        </div>
+    </section>
+
+    <!-- .................................................................................> -->
+
+    <div class="best">Best Seller</div>
+
+     <section class="items-section">
+    <div class="item-card">
+      <img src="https://blix.in/cdn/shop/files/Untitled_design_41.png?v=1759989747&width=533" alt="BLIX - DIY RC EXPLORERS">
+      <h3>BLIX - DIY RC EXPLORERS</h3>
+      <p>Rs. 2,999.00</p>
+    </div>
+
+    <div class="item-card">
+      <img src="https://blix.in/cdn/shop/files/MR2_front-image_1.jpg?v=1759989818&width=533" alt="BLIX MARBLE RUN 2">
+      <h3>BLIX MARBLE RUN 2</h3>
+      <p>Rs. 1,999.00</p>
+    </div>
+
+    <div class="item-card">
+      <img src="https://blix.in/cdn/shop/files/Gear-box.webp?v=1759989858&width=533" alt="BLIX GEAR BOX – ROBOTICS FOR KIDS">
+      <h3>BLIX GEAR BOX - ROBOTICS FOR KIDS</h3>
+      <p>Rs. 1,699.00</p>
+    </div>
+
+    <div class="item-card">
+      <img src="https://blix.in/cdn/shop/files/Marble-Run-1.webp?v=1759989596&width=533" alt="BLIX MARBLE RUN 1">
+      <h3>BLIX MARBLE RUN 1</h3>
+      <p>Rs. 949.00</p>
+    </div>
+  </section>
+
+  <img src="https://cdn.shopify.com/s/files/1/0847/6232/9362/files/Words-from-our-CEO-pc.jpg?v=1742991072" alt="" class="video">
+
+  <div class="part">Our Partners</div>
+
+   <div class="glide">
+  <div class="glide-track">
+    <img src="https://cdn.shopify.com/s/files/1/0847/6232/9362/files/our-partners_0008_Flourish.webp?v=1760435238" alt="" class="glide-img">
+    <img src="https://cdn.shopify.com/s/files/1/0847/6232/9362/files/our-partners_0005_Bhuta-School-Logo-Ver-3.webp?v=1760435238" alt="" class="glide-img">
+    <img src="https://cdn.shopify.com/s/files/1/0847/6232/9362/files/our-partners_0000_logo.webp?v=1760435237" alt="" class="glide-img">
+    <img src="https://cdn.shopify.com/s/files/1/0847/6232/9362/files/our-partners_0006_Fountainhead.webp?v=1760435238" alt="" class="glide-img">
+    <img src="https://cdn.shopify.com/s/files/1/0847/6232/9362/files/our-partners_0007_kcis-logo.webp?v=1760435237" alt="" class="glide-img">
+    <img src="https://cdn.shopify.com/s/files/1/0847/6232/9362/files/our-partners_0003_Kt-golbal.webp?v=1760435237" alt="" class="glide-img">
+    <img src="https://cdn.shopify.com/s/files/1/0847/6232/9362/files/our-partners_0002_KIIT-Logo-Silver-Jubilee-25-Years-1x.webp?v=1760435237" alt="" class="glide-img">
+    <img src="https://cdn.shopify.com/s/files/1/0847/6232/9362/files/our-partners_0001_nahar.webp?v=1760435237" alt="" class="glide-img">
+    <img src="https://cdn.shopify.com/s/files/1/0847/6232/9362/files/our-partners_0008_Flourish.webp?v=1760435238" alt="" class="glide-img">
+    <img src="https://cdn.shopify.com/s/files/1/0847/6232/9362/files/our-partners_0005_Bhuta-School-Logo-Ver-3.webp?v=1760435238" alt="" class="glide-img">
+    <img src="https://cdn.shopify.com/s/files/1/0847/6232/9362/files/our-partners_0000_logo.webp?v=1760435237" alt="" class="glide-img">
+  </div>
+</div>
+
+<div class="edtech">Edtech Partners</div>
+
+<section class="wro-section">
+  <div class="wro-left">
+    <img src="https://blix.in/cdn/shop/files/WRO-India-GUIDELINE-12-1024x296.png?v=1756966682&width=1070" alt="WRO India Logo">
+  </div>
+
+  <div class="wro-right">
+    <p>
+      Blix is thrilled to be the official EdTech partner of WRO India! This year, we’re thrilled to introduce our Blix Kits, specially designed to empower young innovators and get them future-ready for next year’s challenge.
+    </p>
+    <a href="#" class="wro-btn">Visit Website</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-logo">
+      <img src="https://blix.in/cdn/shop/files/Final_Blix_logo-02.png?v=1736241875&width=1100" alt="Blix Logo">
+      <p>Become an exclusive member for special offers and discounts!</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Customer Care</h4>
+      <ul>
+        <li><a href="#">About us</a></li>
+        <li><a href="#">Contact us</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Quick Shop</h4>
+      <ul>
+        <li><a href="#">Spare Parts</a></li>
+        <li><a href="#">Robotix Sets</a></li>
+        <li><a href="#">STEM Toys</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Shipping Policy</a></li>
+        <li><a href="#">Terms & Conditions</a></li>
+        <li><a href="#">Replacement Policy</a></li>
+        <li><a href="#">Career</a></li>
+        <li><a href="#">Blog</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-social">
+    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+    <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+  </div>
+
+  <div class="footer-bottom">
+    © 2025, Blix Education PVT LTD Powered by Shopify
+  </div>
+</footer>
+
+</body>
+</html>
