@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spare Parts</title>
+</head>
+<style>
+      
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+.fixed-box {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #000000;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000; 
+    font-size: 3vh ;
+    
+}
+
+.scroll-box {
+  background-color: #0f1c2a; 
+  overflow: hidden;           
+  padding: 12px 0;
+  color: white;
+  white-space: nowrap;    
+}
+
+.scroll-track {
+  display: flex;
+  animation: scroll 10s linear infinite;
+}
+
+.content {
+  display: flex;    
+  flex-shrink: 0;  
+}
+
+.content span {
+  margin: 0 20px;    
+  font-size: 1.5vw;    
+  font-weight: lighter;
+}
+
+.content .green {
+  color: #4CAF50; /
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.top-bar {
+  height: 8px;
+  background-color: #0b2f4c; 
+}
+
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #eeeeee;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.logo img {
+  height: 10vh; 
+  width: 9vw;
+}
+
+.nav-links ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none; 
+}
+
+.nav-links li {
+  margin: 0 15px; 
+  position: relative;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 5px 0;
+  display: block;
+   font-weight: 300;
+}
+
+.nav-links a span {
+  font-size: 0.7em; 
+  margin-left: 4px;
+}
+
+.nav-links a.active {
+  border-bottom: 3px solid #333;
+  color: #000;
+}
+
+.nav-icons {
+  display: flex;
+  align-items: center;
+}
+
+.nav-icons .icon {
+  margin-left: 20px; 
+}
+
+.nav-icons .icon img {
+  height: 24px; 
+  width: 24px;
+}
+/* .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 10px 0;
+  margin: 0;
+  list-style: none;
+  min-width: 180px;
+  z-index: 10;
+}
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu li {
+  margin: 0;
+}
+
+.dropdown-menu a {
+  padding: 10px 20px;
+  font-weight: 400;
+}
+
+.dropdown-menu a.active {
+  border-bottom: none;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f4f4f4;
+} */
+ .heading{
+    font-size: 4vw;
+    justify-self: center;
+    margin-top: 3vw;
+    margin-bottom: 2vw;
+ }
+ .parts {
+    display: flex;
+    justify-content: center;
+    gap: 3vw;
+ }
+ 
+ .spare-img img{
+    height: 28vw;
+    width: 28vw;
+     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+ }
+ .spare-img h4{
+    justify-self: center;
+    font-weight: lighter;
+ }
+ 
+footer {
+  padding: 60px 100px 20px;
+  background-color: #fff;
+  border-top: 1px solid #eee;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-logo {
+  flex: 1;
+  min-width: 220px;
+}
+
+.footer-logo img {
+  width: 100px;
+  margin-bottom: 15px;
+}
+
+.footer-logo p {
+  color: #111;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.footer-col {
+  flex: 1;
+  min-width: 180px;
+}
+
+.footer-col h4 {
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+  text-decoration: none;
+  color: #000;
+  font-size: 15px;
+  transition: color 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+  color: #b6a700;
+}
+
+/* Social icons */
+.footer-social {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.footer-social a {
+  margin: 0 8px;
+  color: #000;
+  font-size: 20px;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-social a:hover {
+  color: #f6e300;
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 13px;
+  color: #333;
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+}
+
+@media (max-width: 900px) {
+  footer {
+    padding: 40px 20px;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+}
+
+</style>
+<body>
+     <div class="fixed-box">
+      💬 chat
+    </div>
+    <div class="scroll-box">
+      <div class="scroll-track">
+        
+        <div class="content">
+          <span>Apply Discount Code: Welcome10</span>
+          <span class="green">Get 10% Off!</span>
+          <span>Apply Discount Code: Welcome10</span>
+          <span class="green">Get 10% Off!</span>
+          <span>Apply Discount Code: Welcome10</span>
+          <span class="green">Get 10% Off!</span>
+        </div>
+        
+        <div class="content">
+          <span>Apply Discount Code: Welcome10</span>
+          <span class="green">Get 10% Off!</span>
+          <span>Apply Discount Code: Welcome10</span>
+          <span class="green">Get 10% Off!</span>
+          <span>Apply Discount Code: Welcome10</span>
+          <span class="green">Get 10% Off!</span>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="top-bar"></div>
+
+    <header class="main-nav">
+        
+        <div class="logo">
+            <img src="https://blix.in/cdn/shop/files/Final_Blix_logo-02.png?v=1736241875&width=165" alt="Blix Logo">
+        </div>
+
+        <nav class="nav-links">
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">About us</a></li>
+                <li class="dropdown">
+                    <a href="#">Shop <span>&#9662;</span></a> 
+                    <!-- <ul class="dropdown-menu">
+                        <li><a href="#">Product 1</a></li>
+                        <li><a href="#">Product 2</a></li>
+                    </ul> -->
+                </li>
+                <li><a href="#">Blix For School</a></li>
+                <li><a href="#">Blix A Thon</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Replacement</a></li>
+                <li class="dropdown">
+                    <a href="#">Inquiry <span>&#9662;</span></a>
+                    <!-- <ul class="dropdown-menu">
+                        <li><a href="#">Inquiry 1</a></li>
+                        <li><a href="#">Inquiry 2</a></li>
+                    </ul> -->
+                </li>
+            </ul>
+        </nav>
+
+        <div class="nav-icons">
+            <a href="#" class="icon">
+                <img src="https://www.freepnglogos.com/uploads/search-png/search-icon-transparent-images-vector-15.png" alt="Search">
+            </a>
+            <a href="#" class="icon">
+                <img src="https://static.vecteezy.com/ti/vetor-gratis/p1/5005788-user-icon-in-trendy-flat-style-isolated-on-gray-background-user-symbol-for-your-web-site-design-logo-app-ui-vector-illustration-eps10-gratis-vetor.jpg" alt="User">
+            </a>
+            <a href="#" class="icon">
+                <img src="https://static.vecteezy.com/system/resources/previews/019/898/075/large_2x/shopping-bag-outline-icon-png.png" alt="Cart">
+            </a>
+        </div>
+
+    </header>
+
+    <div class="heading">Spare Parts</div>
+    <div class="parts">
+        <div class="spare-img"><img src="https://cdn.shopify.com/s/files/1/0847/6232/9362/files/Blix-P21X21.png?v=1747629975" alt=""><h4>Spare Parts</h4></div>
+        
+        <div class="spare-img"><img src="https://cdn.shopify.com/s/files/1/0847/6232/9362/files/Blix-Special_Parts_Package_4.png?v=1747629572" alt=""><h4>Spare Parts Combo</h4></div>
+    </div>
+
+    
+<footer>
+  <div class="footer-top">
+    <div class="footer-logo">
+      <img src="https://blix.in/cdn/shop/files/Final_Blix_logo-02.png?v=1736241875&width=1100" alt="Blix Logo">
+      <p>Become an exclusive member for special offers and discounts!</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Customer Care</h4>
+      <ul>
+        <li><a href="#">About us</a></li>
+        <li><a href="#">Contact us</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Quick Shop</h4>
+      <ul>
+        <li><a href="#">Spare Parts</a></li>
+        <li><a href="#">Robotix Sets</a></li>
+        <li><a href="#">STEM Toys</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Shipping Policy</a></li>
+        <li><a href="#">Terms & Conditions</a></li>
+        <li><a href="#">Replacement Policy</a></li>
+        <li><a href="#">Career</a></li>
+        <li><a href="#">Blog</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-social">
+    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+    <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+  </div>
+
+  <div class="footer-bottom">
+    © 2025, Blix Education PVT LTD Powered by Shopify
+  </div>
+</footer>
+
+</body>
+</html>
