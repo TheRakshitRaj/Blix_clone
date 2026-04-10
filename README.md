@@ -25,7 +25,7 @@ To view this project locally on your machine, follow these simple steps:
 ### Prerequisites
 You only need a modern web browser (Chrome, Firefox, Safari, Edge) to view this project. No Node.js or build tools are required.
 
-### Installation
+
 
 1. Clone the repository to your local machine:
    ```bash
